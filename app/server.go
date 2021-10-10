@@ -18,6 +18,8 @@ func (server *Server) initialize() {
 	fmt.Println("Welcome to indonesia")
 
 	server.Router = mux.NewRouter()
+	server.initializeRoutes()
+
 }
 
 func (server *Server) Run(addr string) {
