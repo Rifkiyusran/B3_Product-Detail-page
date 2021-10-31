@@ -13,8 +13,3 @@ public class MainActivity extends ReactActivity {
     return "pdp";
   }
 }
-
-@Override
-protected void onCreate(Bundle savedInstanceState) {
-  super.onCreate(null);
-}
