@@ -110,8 +110,10 @@ func handleRequest() {
 
 func main() {
 	Products = []Product{
-		Product{ID: "1", Title: "First Product", Price: 200000, Quantity: 5, Deskripsi: "product ini sangat bagus"},
-		Product{ID: "2", Title: "Second Product", Price: 500000, Quantity: 15, Deskripsi: "product ini luar biasa"},
+		Product{ID: "100", Title: "Rockider MT 500", Price: 199000, Quantity: 20, Deskripsi: "Helm ini berfungsi untuk melindungi kepala dari benturan apabila mengalami kecelakaan "},
+		Product{ID: "200", Title: "Rockbow WT-09", Price: 199000, Quantity: 20, Deskripsi: "Helm ini berfungsi untuk melindungi kepala dari benturan apabila mengalami kecelakaan "},
+		Product{ID: "300", Title: "Rockbros WT-09", Price: 199000, Quantity: 20, Deskripsi: "Helm ini berfungsi untuk melindungi kepala dari benturan apabila mengalami kecelakaan "},
+		Product{ID: "400", Title: "Rockbros BIke Googles", Price: 199000, Quantity: 20, Deskripsi: "Helm ini berfungsi untuk melindungi kepala dari benturan apabila mengalami kecelakaan "},
 	}
 
 	handleRequest()
