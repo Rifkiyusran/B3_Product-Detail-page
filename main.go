@@ -11,11 +11,13 @@ import (
 )
 
 type Product struct {
-	ID        string `json:"id"`
-	Title     string `json:"title"`
-	Price     int    `json:"price"`
-	Deskripsi string `json:"deskripsi"`
-	Quantity  int    `json:"quantity"`
+	ID        string `json:"product_id"`
+	Title     string `json:"nama_product"`
+	Price     int    `json:"price_product"`
+	Deskripsi string `json:"deskripsi_product"`
+	Rating 	  string `json:"rating_product"`
+	Image 	  string `json:image_product`
+	
 }
 
 func home(w http.ResponseWriter, r *http.Request) {
@@ -71,8 +73,9 @@ func updateProduct(w http.ResponseWriter, r *http.Request) {
 		if p.ID == id {
 			Products[i].Title = product.Title
 			Products[i].Price = product.Price
-			Products[i].Quantity = product.Quantity
 			Products[i].Deskripsi = product.Deskripsi
+			Products[i].Rating = product.Rating
+			Products[i].Image = product.Image
 			json.NewEncoder(w).Encode(Products[i])
 			return
 		}
@@ -110,10 +113,11 @@ func handleRequest() {
 
 func main() {
 	Products = []Product{
-		Product{ID: "100", Title: "Rockider MT 500", Price: 199000, Quantity: 20, Deskripsi: "Helm ini berfungsi untuk melindungi kepala dari benturan apabila mengalami kecelakaan "},
-		Product{ID: "200", Title: "Rockbow WT-09", Price: 199000, Quantity: 20, Deskripsi: "Helm ini berfungsi untuk melindungi kepala dari benturan apabila mengalami kecelakaan "},
-		Product{ID: "300", Title: "Rockbros WT-09", Price: 199000, Quantity: 20, Deskripsi: "Helm ini berfungsi untuk melindungi kepala dari benturan apabila mengalami kecelakaan "},
-		Product{ID: "400", Title: "Rockbros BIke Googles", Price: 199000, Quantity: 20, Deskripsi: "Helm ini berfungsi untuk melindungi kepala dari benturan apabila mengalami kecelakaan "},
+		Product{ID: "100", Title: "Rockider MT 500", Price: 199000, Deskripsi: "Helm ini cocok digunakan untuk bersepeda karena ukurannya pas dan cocok dipake siapa saja"},
+		Product{ID: "200", Title: "Rockbow WT-09", Price: 199000, Deskripsi: "Helm ini keluaran terbaru dari helm sebelumnya kelebihan helm ini terdapat pada penutup topi"},
+		Product{ID: "300", Title: "Rockbros WT-09", Price: 199000, Deskripsi: "Helm ini berfungsi untuk melindungi kepala dari benturan apabila mengalami kecelakaan dan untuk menghidari resiko yang lebih berat "},
+		Product{ID: "400", Title: "Rockbros BIke Googles", Price: 199000, Deskripsi: "Helm ini keluaran seri baru dari helm sebelumnya yaitu Rockbros WT-09 "},
+		Product{ID: "500", Title: "Shimano RC 09", Price: 190000, Deskripsi: "Sepatu ini cocok dipakai untuk olahraga atau untuk kegiatan sehari-hari"},
 	}
 
 	handleRequest()
